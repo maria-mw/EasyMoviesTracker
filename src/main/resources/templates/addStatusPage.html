@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Status</title>
+</head>
+<body>
+<h1> Add New Status </h1> <hr/>
+<form th:action="@{/addStatus}" th:object="${status}" method="post">
+  Enter Status Title <br/>
+  <input type="text" th:field="*{title}"> <br/> <br/>
+  <input type="submit" value="Submit">
+</form>
+<hr/>
+<h3 th:text="${message}"></h3>
+<a th:href="@{/start}">Back</a>
+<center>
+  <table border="5" width="30%">
+    <tr>
+      <th> Status ID </th>
+      <th> Status Title </th>
+    </tr>
+    <tr th:each="tab : ${data}">
+      <td th:text="${tab.id}">  </td>
+      <td th:text="${tab.title}">  </td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Start Page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1> Movie Operations </h1> <hr/>
+<a th:href="@{/addMovieForm}">Add New Movie</a>
+<a th:href="@{/addCategoryForm}">Add New Category</a>
+<a th:href="@{/addStatusForm}">Add New Status</a>
+</br>
+<a th:href="@{/allMovies}">All Movies</a>
+<a th:href="@{/allCategories}">All Categories</a>
+<a th:href="@{/allStatuses}">All Statuses</a>
+</body>
+</html>
+

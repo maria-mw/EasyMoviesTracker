@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Movie</title>
+</head>
+<body>
+<h1> New Movie </h1> <hr/>
+<form th:action="@{/addMovie}" th:object="${movie}" method="post">
+  Enter English Movie title <br/>
+  <input type="text" th:field="*{titleEng}"> <br/> <br/>
+
+  Enter Russian Movie title <br/>
+  <input type="text" th:field="*{titleRus}"> <br/> <br/>
+
+  Enter Movie released year <br/>
+  <input type="text" th:field="*{year}"> <br/> <br/>
+
+  Enter Seasons amount <br/>
+  <input type="text" th:field="*{seasons}"> <br/> <br/>
+
+  Enter Released series amount  <br/>
+  <input type="text" th:field="*{releasedSeries}"> <br/> <br/>
+
+  Enter Watched series amount  <br/>
+  <input type="text" th:field="*{watchedSeries}"> <br/> <br/>
+
+  Select Movie Category <br/>
+  <select th:field="*{category}">
+    <option value=""> Nothing selected </option>
+    <option th:each="list : ${categoriesList}"
+            th:value="${list.id}"
+            th:text="${list.title}"></option>
+<!--    <option th:each="financialInstitute : ${financialInstitutes}"-->
+<!--            th:value="${financialInstitute.id}" th:text="${financialInstitute.title}">-->
+  </select>
+  <br/>
+  <br/>
+  Select Movie Status <br/>
+  <select th:field="*{status}">
+    <option value=""> Nothing selected </option>
+    <option th:each="list : ${statusesList}"
+            th:value="${list.id}"
+            th:text="${list.title}"></option>
+  </select>
+  <br/>
+  <br/>
+  Enter Comments <br/>
+  <input type="text" th:field="*{comments}"> <br/> <br/>
+
+  <input type="submit" value="Submit">
+</form>
+<hr/>
+<a th:href="@{/start}">Back</a>
+<h3 th:text="${message}"></h3>
+
+<center>
+  <table border="5" width="40%">
+    <tr>
+      <th> ID </th>
+      <th> TITLE ENG </th>
+      <th> TITLE RUS </th>
+      <th> YEAR </th>
+      <th> SEASONS </th>
+      <th> RELEASED SERIES </th>
+      <th> WATCHED SERIES </th>
+      <th> CATEGORY </th>
+      <th> STATUS </th>
+      <th> COMMENTS </th>
+    </tr>
+    <tr th:each="tab : ${data}">
+      <td th:text="${tab.id}">  </td>
+      <td th:text="${tab.titleEng}">  </td>
+      <td th:text="${tab.titleRus}">  </td>
+      <td th:text="${tab.year}">  </td>
+      <td th:text="${tab.seasons}">  </td>
+      <td th:text="${tab.releasedSeries}">  </td>
+      <td th:text="${tab.watchedSeries}">  </td>
+      <td th:text="${tab.category.title}">  </td>
+      <td th:text="${tab.status.title}">  </td>
+      <td th:text="${tab.comments}"></td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>
