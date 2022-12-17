@@ -65,9 +65,7 @@ public class StatusRepositoryService implements StatusRepository {
     }
 
     @Override
-    public Status getById(Integer integer) {
-        return null;
-    }
+    public Status getById(Integer integer) { return null; }
 
     @Override
     public Status getReferenceById(Integer integer) {

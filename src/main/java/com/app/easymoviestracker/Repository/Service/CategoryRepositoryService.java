@@ -64,9 +64,7 @@ public class CategoryRepositoryService implements CategoryRepository {
     }
 
     @Override
-    public Category getById(Integer integer) {
-        return null;
-    }
+    public Category getById(Integer integer) { return null; }
 
     @Override
     public Category getReferenceById(Integer integer) {
