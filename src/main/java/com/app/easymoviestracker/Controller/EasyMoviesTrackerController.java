@@ -220,14 +220,14 @@ public class EasyMoviesTrackerController {
         return "allStatusesPage";
     }
 
-    @GetMapping("/addLanguage")   //Goto addStatus Page.
-    public String addLanguage(Status status) {
+    @GetMapping("/addLanguageForm")   //Goto addStatus Page.
+    public String addLanguage(Language language) {
         return "addLanguagePage";
     }
 
-    @PostMapping("/addStatus")
-    public String saveLanguage(Language laguage, Model model) {
-        languageRepositoryService.save(laguage);
+    @PostMapping("/addLanguage")
+    public String saveLanguage(Language language, Model model) {
+        languageRepositoryService.save(language);
         model.addAttribute("message", "Record insert successfully...");
         //Display Status Info
         List<Language> list = languageRepositoryService.findAll();
