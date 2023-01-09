@@ -8,7 +8,7 @@
 <h1> Add New Access </h1><hr/>
 <form th:action="@{/addAccess}" th:object="${access}" method="post">
     Enter Access Title<br/>
-    <input type="text" th:field="*{title}"><br/><br/>
+    <input type="text" th:field="*{title}"> <br/> <br/>
     <input type="submit" value="Submit">
 </form>
 <hr/>
@@ -21,8 +21,8 @@
             <th> Access Title </th>
         </tr>
         <tr th:each="tab : ${data}">
-            <td th:text="${tab.id}"></td>
-            <td th:text="${tab.title}"></td>
+            <td th:text="${tab.id}"> </td>
+            <td th:text="${tab.title}"> </td>
         </tr>
     </table>
 </center>

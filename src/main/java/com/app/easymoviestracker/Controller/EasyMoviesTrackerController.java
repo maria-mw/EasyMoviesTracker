@@ -86,28 +86,6 @@ public class EasyMoviesTrackerController {
         return "allGenresPage";
     }
 
-    @GetMapping("/addExitDayFrom")  //Goto addExitDay Page
-    public String addExitDay(ExitDay exitDay) {
-        return "addExitDay";
-    }
-
-    @PostMapping("/addExitDay")
-    public String saveExitDay(ExitDay exitDay, Model model) {
-        exitDayRepositoryService.save(exitDay);
-        model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
-        List<ExitDay> list = exitDayRepositoryService.findAll();
-        model.addAttribute("data", list);
-        return "addExitDayPage";
-    }
-
-    @GetMapping("/allExitDays")
-    public String listExitDay(Model model) {
-        List<ExitDay> list = exitDayRepositoryService.findAll();
-        model.addAttribute("data", list);
-        return "allExitDaysPage";
-    }
-
     @GetMapping("/addCountryFrom")  //Goto addCountry Page
     public String addCountry(Country country) {
         return "addExitDay";
@@ -240,6 +218,28 @@ public class EasyMoviesTrackerController {
         //Display All Statuses
         List<Language> list = languageRepositoryService.findAll();
         model.addAttribute("data", list);
-        return "allLanguagePage";
+        return "allLanguagesPage";
+    }
+
+    @GetMapping("/addExitDayFrom")  //Goto addExitDay Page
+    public String addExitDay(ExitDay exitDay) {
+        return "addExitDay";
+    }
+
+    @PostMapping("/addExitDay")
+    public String saveExitDay(ExitDay exitDay, Model model) {
+        exitDayRepositoryService.save(exitDay);
+        model.addAttribute("message", "Record insert successfully...");
+        //Display Category Info
+        List<ExitDay> list = exitDayRepositoryService.findAll();
+        model.addAttribute("data", list);
+        return "addExitDayPage";
+    }
+
+    @GetMapping("/allExitDays")
+    public String listExitDay(Model model) {
+        List<ExitDay> list = exitDayRepositoryService.findAll();
+        model.addAttribute("data", list);
+        return "allExitDaysPage";
     }
 }
