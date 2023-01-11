@@ -1,6 +1,7 @@
 package com.app.easymoviestracker.Controller;
 
 import com.app.easymoviestracker.Entity.*;
+import com.app.easymoviestracker.Repository.ExitDayRepository;
 import com.app.easymoviestracker.Repository.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,16 @@ public class EasyMoviesTrackerController {
     public String addMovie(Movie movie, Model model) {
         List<Genre> genresList = genreRepositoryService.findAll();
         model.addAttribute("genresList", genresList);
+        List<Access> accessesList = accessRepositoryService.findAll();
+        model.addAttribute("accessesList", accessesList);
+        List<Country> countriesList = countryRepositoryService.findAll();
+        model.addAttribute("countriesList", countriesList);
+        List<ExitDay> exitDaysList = exitDayRepositoryService.findAll();
+        model.addAttribute("exitDaysList", exitDaysList);
+        List<Subtitle> subtitlesList = subtitleRepositoryService.findAll();
+        model.addAttribute("subtitleList", subtitlesList);
+        List<Language> languagesList = languageRepositoryService.findAll();
+        model.addAttribute("languagesList", languagesList);
         List<Category> categoriesList = categoryRepositoryService.findAll();
         model.addAttribute("categoriesList", categoriesList);
         List<Status> statusesList = statusRepositoryService.findAll();
@@ -88,7 +99,7 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/addCountryFrom")  //Goto addCountry Page
     public String addCountry(Country country) {
-        return "addExitDay";
+        return "addCountryPage";
     }
 
     @PostMapping("/addCountry")
@@ -110,7 +121,7 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/addAccessFrom")  //Goto addCountry Page
     public String addAccess(Access access) {
-        return "addExitDay";
+        return "addAccessPage";
     }
 
     @PostMapping("/addAccess")
@@ -123,16 +134,16 @@ public class EasyMoviesTrackerController {
         return "addAccessPage";
     }
 
-    @GetMapping("/allAccess")
+    @GetMapping("/allAccesses")
     public String listAccess(Model model) {
         List<Access> list = accessRepositoryService.findAll();
         model.addAttribute("data", list);
-        return "allAccess";
+        return "allAccessesPage";
     }
 
     @GetMapping("/addSubtitleFrom")  //Goto addCountry Page
     public String addSubtitle(Subtitle subtitle) {
-        return "addSubtitle";
+        return "addSubtitlePage";
     }
 
     @PostMapping("/addSubtitle")
@@ -223,7 +234,7 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/addExitDayFrom")  //Goto addExitDay Page
     public String addExitDay(ExitDay exitDay) {
-        return "addExitDay";
+        return "addExitDayPage";
     }
 
     @PostMapping("/addExitDay")
