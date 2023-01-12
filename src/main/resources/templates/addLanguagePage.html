@@ -7,7 +7,7 @@
 <body>
 <h1> Add New Language </h1> <hr/>
 <form th:action="@{/addLanguage}" th:object="${language}" method="post">
-    Enter Category Title <br/>
+    Enter Language Title <br/>
     <input type="text" th:field="*{title}"> <br/> <br/>
     <input type="submit" value="Submit">
 </form>

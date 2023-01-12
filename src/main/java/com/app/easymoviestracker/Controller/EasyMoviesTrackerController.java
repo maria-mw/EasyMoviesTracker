@@ -1,7 +1,6 @@
 package com.app.easymoviestracker.Controller;
 
 import com.app.easymoviestracker.Entity.*;
-import com.app.easymoviestracker.Repository.ExitDayRepository;
 import com.app.easymoviestracker.Repository.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -209,8 +208,8 @@ public class EasyMoviesTrackerController {
         return "allStatusesPage";
     }
 
-    @GetMapping("/addLanguageForm")   //Goto addStatus Page.
-    public String addLanguage(Language language) {
+    @GetMapping("/addLanguageForm")
+    public String addLanguage() {
         return "addLanguagePage";
     }
 
@@ -218,7 +217,6 @@ public class EasyMoviesTrackerController {
     public String saveLanguage(Language language, Model model) {
         languageRepositoryService.save(language);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Status Info
         List<Language> list = languageRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addLanguagePage";
