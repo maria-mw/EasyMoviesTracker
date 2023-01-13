@@ -1,7 +1,7 @@
 package com.app.easymoviestracker.Controller;
 
 import com.app.easymoviestracker.Entity.*;
-import com.app.easymoviestracker.Repository.Service.*;
+import com.app.easymoviestracker.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,7 +72,7 @@ public class EasyMoviesTrackerController {
         return "allMoviesPage";
     }
 
-    @GetMapping("/addGenreFrom")
+    @GetMapping("/addGenreForm")
     public String addGenre(Genre genre) {
         return "addGenrePage";
     }
@@ -93,7 +93,7 @@ public class EasyMoviesTrackerController {
         return "allGenresPage";
     }
 
-    @GetMapping("/addCountryFrom")
+    @GetMapping("/addCountryForm")
     public String addCountry(Country country) {
         return "addCountryPage";
     }
@@ -114,7 +114,7 @@ public class EasyMoviesTrackerController {
         return "allCountriesPage";
     }
 
-    @GetMapping("/addAccessFrom")
+    @GetMapping("/addAccessForm")
     public String addAccess(Access access) {
         return "addAccessPage";
     }
@@ -135,7 +135,7 @@ public class EasyMoviesTrackerController {
         return "allAccessesPage";
     }
 
-    @GetMapping("/addSubtitleFrom")
+    @GetMapping("/addSubtitleForm")
     public String addSubtitle(Subtitle subtitle) {
         return "addSubtitlePage";
     }
@@ -199,7 +199,7 @@ public class EasyMoviesTrackerController {
     }
 
     @GetMapping("/addLanguageForm")
-    public String addLanguage() {
+    public String addLanguage(Language language) {
         return "addLanguagePage";
     }
 
@@ -219,7 +219,7 @@ public class EasyMoviesTrackerController {
         return "allLanguagesPage";
     }
 
-    @GetMapping("/addExitDayFrom")
+    @GetMapping("/addExitDayForm")
     public String addExitDay(ExitDay exitDay) {
         return "addExitDayPage";
     }

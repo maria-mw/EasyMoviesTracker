@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Add Category</title>
+  <title>All Categories</title>
 </head>
 <body>
 <h1> All Categories </h1> <hr/>
-<div style="text-align: center;">
+<center>
   <table border="5" width="30%">
     <tr>
       <th> Category ID </th>
@@ -17,7 +17,7 @@
       <td th:text="${tab.title}">  </td>
     </tr>
   </table>
-</div>
+</center>
 <a th:href="@{/start}">Go Home Page</a>
 </body>
 </html>

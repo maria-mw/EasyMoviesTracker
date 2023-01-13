@@ -1,7 +1,7 @@
-package com.app.easymoviestracker.Repository.Service;
+package com.app.easymoviestracker.Service;
 
-import com.app.easymoviestracker.Entity.Movie;
-import com.app.easymoviestracker.Repository.MovieRepository;
+import com.app.easymoviestracker.Entity.Genre;
+import com.app.easymoviestracker.Repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -15,108 +15,104 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Service
-public class MovieRepositoryService implements MovieRepository {
-    @Autowired
-    private MovieRepository movieRepository;
+public class GenreRepositoryService implements GenreRepository {
 
-    @Override     //Save Movie
-    public <S extends Movie> S save(S entity) {
-        return movieRepository.save(entity);
+    @Autowired
+    private GenreRepository genreRepository;
+
+    @Override   //Save genre
+    public <S extends Genre> S save(S entity) {
+        return genreRepository.save(entity);
     }
 
-    @Override   //Display Movies
-    public List<Movie> findAll() {
-        return movieRepository.findAll();
+    @Override   //Display Genres
+    public List<Genre> findAll() {
+        return genreRepository.findAll();
     }
 
     @Override
     public void flush() {
-
     }
 
     @Override
-    public <S extends Movie> S saveAndFlush(S entity) {
+    public <S extends Genre> S saveAndFlush(S entity) {
         return null;
     }
 
     @Override
-    public <S extends Movie> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public <S extends Genre> List<S> saveAllAndFlush(Iterable<S> entities) {
         return null;
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<Movie> entities) {
-
+    public void deleteAllInBatch(Iterable<Genre> entities) {
     }
 
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> integers) {
-
     }
 
     @Override
     public void deleteAllInBatch() {
-
     }
 
     @Override
-    public Movie getOne(Integer integer) {
+    public Genre getOne(Integer integer) {
         return null;
     }
 
     @Override
-    public Movie getById(Integer integer) {
+    public Genre getById(Integer integer) {
         return null;
     }
 
     @Override
-    public Movie getReferenceById(Integer integer) {
+    public Genre getReferenceById(Integer integer) {
         return null;
     }
 
     @Override
-    public <S extends Movie> Optional<S> findOne(Example<S> example) {
+    public <S extends Genre> Optional<S> findOne(Example<S> example) {
         return Optional.empty();
     }
 
     @Override
-    public <S extends Movie> List<S> findAll(Example<S> example) {
+    public <S extends Genre> List<S> findAll(Example<S> example) {
         return null;
     }
 
     @Override
-    public <S extends Movie> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends Genre> List<S> findAll(Example<S> example, Sort sort) {
         return null;
     }
 
     @Override
-    public <S extends Movie> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public <S extends Genre> Page<S> findAll(Example<S> example, Pageable pageable) {
         return null;
     }
 
     @Override
-    public <S extends Movie> long count(Example<S> example) {
+    public <S extends Genre> long count(Example<S> example) {
         return 0;
     }
 
     @Override
-    public <S extends Movie> boolean exists(Example<S> example) {
+    public <S extends Genre> boolean exists(Example<S> example) {
         return false;
     }
 
     @Override
-    public <S extends Movie, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
-        return null;
-    }
-
-
-    @Override
-    public <S extends Movie> List<S> saveAll(Iterable<S> entities) {
+    public <S extends Genre, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
         return null;
     }
 
     @Override
-    public Optional<Movie> findById(Integer integer) {
+    public <S extends Genre> List<S> saveAll(Iterable<S> entities) {
+        return null;
+    }
+
+    @Override
+    public Optional<Genre> findById(Integer integer) {
         return Optional.empty();
     }
 
@@ -125,9 +121,8 @@ public class MovieRepositoryService implements MovieRepository {
         return false;
     }
 
-
     @Override
-    public List<Movie> findAllById(Iterable<Integer> integers) {
+    public List<Genre> findAllById(Iterable<Integer> integers) {
         return null;
     }
 
@@ -138,36 +133,31 @@ public class MovieRepositoryService implements MovieRepository {
 
     @Override
     public void deleteById(Integer integer) {
-
     }
 
     @Override
-    public void delete(Movie entity) {
-
+    public void delete(Genre entity) {
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Integer> integers) {
-
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Movie> entities) {
-
+    public void deleteAll(Iterable<? extends Genre> entities) {
     }
 
     @Override
     public void deleteAll() {
-
     }
 
     @Override
-    public List<Movie> findAll(Sort sort) {
-        return null;
+    public List<Genre> findAll(Sort sort) {
+        return genreRepository.findAll();
     }
 
     @Override
-    public Page<Movie> findAll(Pageable pageable) {
+    public Page<Genre> findAll(Pageable pageable) {
         return null;
     }
 }

@@ -6,17 +6,18 @@
 </head>
 <body>
 <h1> All Genres </h1><hr/>
-<div style="...">
-    <table border="5" width="30%"></table>
-    <tr>
-        <th> Genre ID </th>
-        <th> Genre Title </th>
-    </tr>
-    <tr th:each="tab : ${data}">
-        <td th:text="${tab.id}"></td>
-        <td th:text="${tab.title}"></td>
-    </tr>
-</div>
+<center>
+    <table border="5" width="30%">
+        <tr>
+            <th> Genre ID </th>
+            <th> Genre Title </th>
+        </tr>
+        <tr th:each="tab : ${data}">
+            <td th:text="${tab.id}"></td>
+            <td th:text="${tab.title}"></td>
+        </tr>
+    </table>
+</center>
 <a th:href="@{/start}">Go Home Page</a>
 </body>
 </html>

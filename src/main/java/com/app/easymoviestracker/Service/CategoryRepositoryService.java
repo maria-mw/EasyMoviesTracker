@@ -1,4 +1,4 @@
-package com.app.easymoviestracker.Repository.Service;
+package com.app.easymoviestracker.Service;
 
 import com.app.easymoviestracker.Entity.Category;
 import com.app.easymoviestracker.Repository.CategoryRepository;
