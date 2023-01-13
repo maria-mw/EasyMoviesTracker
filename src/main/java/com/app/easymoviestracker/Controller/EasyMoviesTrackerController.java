@@ -30,12 +30,12 @@ public class EasyMoviesTrackerController {
     @Autowired
     private LanguageRepositoryService languageRepositoryService;
 
-    @GetMapping({"/", "/start"})    //Goto Index Page.
+    @GetMapping({"/", "/start"})
     public String view() {
         return "index";
     }
 
-    @GetMapping("/addMovieForm")   //Goto addMovie Page.
+    @GetMapping("/addMovieForm")
     public String addMovie(Movie movie, Model model) {
         List<Genre> genresList = genreRepositoryService.findAll();
         model.addAttribute("genresList", genresList);
@@ -60,7 +60,6 @@ public class EasyMoviesTrackerController {
     public String saveMovie(Movie movie, Model model) {
         movieRepositoryService.save(movie);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Movie Info
         List<Movie> moviesList = movieRepositoryService.findAll();
         model.addAttribute("data", moviesList);
         return "addMoviePage";
@@ -68,13 +67,12 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/allMovies")
     public String listMovies(Model model) {
-        //Display All Movies
         List<Movie> list = movieRepositoryService.findAll();
         model.addAttribute("data", list);
         return "allMoviesPage";
     }
 
-    @GetMapping("/addGenreFrom")    //Goto addGenre Page
+    @GetMapping("/addGenreFrom")
     public String addGenre(Genre genre) {
         return "addGenrePage";
     }
@@ -83,7 +81,6 @@ public class EasyMoviesTrackerController {
     public String saveGenre(Genre genre, Model model) {
         genreRepositoryService.save(genre);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Genre info
         List<Genre> list = genreRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addGenrePage";
@@ -96,7 +93,7 @@ public class EasyMoviesTrackerController {
         return "allGenresPage";
     }
 
-    @GetMapping("/addCountryFrom")  //Goto addCountry Page
+    @GetMapping("/addCountryFrom")
     public String addCountry(Country country) {
         return "addCountryPage";
     }
@@ -105,7 +102,6 @@ public class EasyMoviesTrackerController {
     public String saveCountry(Country country, Model model) {
         countryRepositoryService.save(country);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
         List<Country> list = countryRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addCountryPage";
@@ -118,7 +114,7 @@ public class EasyMoviesTrackerController {
         return "allCountriesPage";
     }
 
-    @GetMapping("/addAccessFrom")  //Goto addCountry Page
+    @GetMapping("/addAccessFrom")
     public String addAccess(Access access) {
         return "addAccessPage";
     }
@@ -127,7 +123,6 @@ public class EasyMoviesTrackerController {
     public String saveAccess(Access access, Model model) {
         accessRepositoryService.save(access);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
         List<Access> list = accessRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addAccessPage";
@@ -140,7 +135,7 @@ public class EasyMoviesTrackerController {
         return "allAccessesPage";
     }
 
-    @GetMapping("/addSubtitleFrom")  //Goto addCountry Page
+    @GetMapping("/addSubtitleFrom")
     public String addSubtitle(Subtitle subtitle) {
         return "addSubtitlePage";
     }
@@ -149,7 +144,6 @@ public class EasyMoviesTrackerController {
     public String saveSubtitle(Subtitle subtitle, Model model) {
         subtitleRepositoryService.save(subtitle);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
         List<Subtitle> list = subtitleRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addSubtitlePage";
@@ -162,7 +156,7 @@ public class EasyMoviesTrackerController {
         return "allSubtitlesPage";
     }
 
-    @GetMapping("/addCategoryForm")   //Goto addCategory Page.
+    @GetMapping("/addCategoryForm")
     public String addCategory(Category category) {
         return "addCategoryPage";
     }
@@ -171,7 +165,6 @@ public class EasyMoviesTrackerController {
     public String saveCategory(Category category, Model model) {
         categoryRepositoryService.save(category);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
         List<Category> list = categoryRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addCategoryPage";
@@ -179,13 +172,12 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/allCategories")
     public String listCategory(Model model) {
-        //Display Status Info
         List<Category> list = categoryRepositoryService.findAll();
         model.addAttribute("data", list);
         return "allCategoriesPage";
     }
 
-    @GetMapping("/addStatusForm")   //Goto addStatus Page.
+    @GetMapping("/addStatusForm")
     public String addStatus(Status status) {
         return "addStatusPage";
     }
@@ -194,7 +186,6 @@ public class EasyMoviesTrackerController {
     public String saveStatus(Status status, Model model) {
         statusRepositoryService.save(status);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Status Info
         List<Status> list = statusRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addStatusPage";
@@ -202,7 +193,6 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/allStatuses")
     public String listStatus(Model model) {
-        //Display All Statuses
         List<Status> list = statusRepositoryService.findAll();
         model.addAttribute("data", list);
         return "allStatusesPage";
@@ -224,13 +214,12 @@ public class EasyMoviesTrackerController {
 
     @GetMapping("/allLanguages")
     public String listLanguage(Model model) {
-        //Display All Statuses
         List<Language> list = languageRepositoryService.findAll();
         model.addAttribute("data", list);
         return "allLanguagesPage";
     }
 
-    @GetMapping("/addExitDayFrom")  //Goto addExitDay Page
+    @GetMapping("/addExitDayFrom")
     public String addExitDay(ExitDay exitDay) {
         return "addExitDayPage";
     }
@@ -239,7 +228,6 @@ public class EasyMoviesTrackerController {
     public String saveExitDay(ExitDay exitDay, Model model) {
         exitDayRepositoryService.save(exitDay);
         model.addAttribute("message", "Record insert successfully...");
-        //Display Category Info
         List<ExitDay> list = exitDayRepositoryService.findAll();
         model.addAttribute("data", list);
         return "addExitDayPage";
