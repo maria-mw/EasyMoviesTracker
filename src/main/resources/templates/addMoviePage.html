@@ -27,7 +27,7 @@
 
   Select Movie Category <br/>
   <select th:field="*{category}">
-    <option value=""> Nothing selected </option>
+<!--    <option value=""> Nothing selected </option>-->
     <option th:each="list : ${categoriesList}"
             th:value="${list.id}"
             th:text="${list.title}"></option>
@@ -38,7 +38,7 @@
   <br/>
   Select Movie Status <br/>
   <select th:field="*{status}">
-    <option value=""> Nothing selected </option>
+<!--    <option value=""> Nothing selected </option>-->
     <option th:each="list : ${statusesList}"
             th:value="${list.id}"
             th:text="${list.title}"></option>
