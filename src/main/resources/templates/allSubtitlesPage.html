@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Subtitle</title>
+</head>
+<body>
+<h1> All Subtitles </h1><hr/>
+<center>
+    <table border="5" width="30%">
+        <tr>
+           <th> Subtitle ID </th>
+           <th> Subtitle Title </th>
+        </tr>
+        <tr th:each="tab : ${data}">
+            <td th:text="${tab.id}"></td>
+            <td th:text="${tab.title}"></td>
+        </tr>
+    </table>
+</center>
+<a th:href="@{/start}">Go Home Page</a>
+</body>
+</html>

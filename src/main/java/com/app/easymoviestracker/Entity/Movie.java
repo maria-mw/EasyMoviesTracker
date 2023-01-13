@@ -21,6 +21,18 @@ public class Movie implements Serializable {
     private Status status;
     @ManyToOne
     private Category category;
+    @ManyToOne
+    private Access access;
+    @ManyToOne
+    private Country country;
+    @ManyToOne
+    private ExitDay exitDay;
+    @ManyToOne
+    private Genre genre;
+    @ManyToOne
+    private Language language;
+    @ManyToOne
+    private Subtitle subtitle;
 
     public Movie() {
     }
@@ -103,6 +115,54 @@ public class Movie implements Serializable {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public Access getAccess() {
+        return access;
+    }
+
+    public void setAccess(Access access) {
+        this.access = access;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public ExitDay getExitDay() {
+        return exitDay;
+    }
+
+    public void setExitDay(ExitDay exitDay) {
+        this.exitDay = exitDay;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public Subtitle getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(Subtitle subtitle) {
+        this.subtitle = subtitle;
     }
 
     @Override
